@@ -10,7 +10,8 @@ public class FirstOpenSquareStrategy implements MoveStrategy {
     //pikc the first one
     @Override
     public Position chooseMove(Board board, Mark myMark, Mark opponentMark){
-        List<Position> openPositions = new ArrayList<Position>();
+//        swapped out the previous, to utilize the getOpenPositions function that you made
+        List<Position> openPositions = board.getOpenPositions();
 
         if (openPositions.isEmpty()){
             return null;
