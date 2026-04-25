@@ -25,7 +25,7 @@ public class Board {
         List<Position> openPositions = new ArrayList<Position>();
         for (int k=0; k < 3; k++) {
             for (int l=0; l < 3; l++) {
-                if (grid[k][l] == Mark.EMPTY) {openPositions.add(new Position(k, l) )}
+                if (grid[k][l] == Mark.EMPTY) {openPositions.add(new Position(k, l));}
             }
         }
         return openPositions;
@@ -37,5 +37,18 @@ public class Board {
             return true;
         }
         return false;
+    }
+
+    //help fucntions
+    public boolean isOpen(Position position){
+        return grid[position.getRow()][position.getColumn()] == Mark.EMPTY;
+    }
+
+    public Mark getMark(Position position){
+        return grid[position.getRow()][position.getColumn()];
+    }
+
+    public boolean isMarked(){
+        return getOpenPositions().isEmpty();
     }
 }

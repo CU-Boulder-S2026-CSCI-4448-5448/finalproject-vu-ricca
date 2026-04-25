@@ -18,3 +18,6 @@ This is a good way to ensure there is a clean switch between game states.
 ### 4. Factory Pattern
 This pattern is used to create different player types. If there were to be a game between 
 player and player, npc vs player, or npc vs. npc than this pattern allows for clean construction for these types fo players.
+
+## Game Layout
+The board will always be a standard 3x3 grid, with only X's and O's as marks to indicate the players choice of square on the grid. 
