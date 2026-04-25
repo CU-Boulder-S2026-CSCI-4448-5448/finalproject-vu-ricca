@@ -5,13 +5,37 @@ import tictactoe.Board;
 import tictactoe.MoveStrategy;
 import tictactoe.Position;
 
-/*
-* creats a list of all the corners on the 3x3 grid
-*  if there is a position in the corners list that is open we return that position
-*  then if there are no open positions return null
-*  then the default is to just choose the first open positions if all else is untrue*/
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BlockingMoveStrategy implements MoveStrategy {
 
+    @Override
+    public Position chooseMove(Board board, Mark myMark, Mark opponentMark){
+        List<Position> openPositions = board.getOpenPositions();
 
+        //create a copy of the board to check/simulate possible moves
+        //without changing the state of the board
+        for(Position position : openPositions){
+
+            Board copyOfBoard = new Board();
+
+            Mark[][] grid = board.getGridCopy();
+            for(int i=0; i < 3; i++){
+                for(int j=0; j < 3; j++){
+                    if(grid[i][j] == Mark.EMPTY){
+                        copyOfBoard.markASpot(new Position(i,j), grid[i][j]);
+                    }
+                }
+            }
+            //simulate opp move/NPC move
+            copyOfBoard.markASpot(position, opponentMark);
+            //see Board.java for checkWinner method
+            if(copyOfBoard.checkWinner(copyOfBoard) == opponentMark){
+                return position; //this blocks
+            }
+        }
+        return null; //no blocking needed
+    }
 }
