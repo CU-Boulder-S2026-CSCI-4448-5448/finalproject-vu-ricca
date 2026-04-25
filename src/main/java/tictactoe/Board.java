@@ -48,8 +48,23 @@ public class Board {
         return grid[position.getRow()][position.getColumn()];
     }
 
-    public boolean isMarked(){
+    public boolean boardIsFull(){
         return getOpenPositions().isEmpty();
+    }
+
+    public Board copyBoard(){
+        Board copy = new Board();
+
+        Mark[][] grid = this.getGridCopy();
+
+        for (int i=0; i < 3; i++) {
+            for (int j=0; j < 3; j++) {
+                if (grid[i][j] != Mark.EMPTY) {
+                    copy.markASpot(new Position(i, j), grid[i][j]);
+                }
+            }
+        }
+        return copy;
     }
 
     public Mark checkWinner(Board board) {

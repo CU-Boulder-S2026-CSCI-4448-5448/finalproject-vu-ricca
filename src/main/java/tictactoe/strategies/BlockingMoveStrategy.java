@@ -19,16 +19,7 @@ public class BlockingMoveStrategy implements MoveStrategy {
         //without changing the state of the board
         for(Position position : openPositions){
 
-            Board copyOfBoard = new Board();
-
-            Mark[][] grid = board.getGridCopy();
-            for(int i=0; i < 3; i++){
-                for(int j=0; j < 3; j++){
-                    if(grid[i][j] == Mark.EMPTY){
-                        copyOfBoard.markASpot(new Position(i,j), grid[i][j]);
-                    }
-                }
-            }
+            Board copyOfBoard = board.copyBoard();
             //simulate opp move/NPC move
             copyOfBoard.markASpot(position, opponentMark);
             //see Board.java for checkWinner method
