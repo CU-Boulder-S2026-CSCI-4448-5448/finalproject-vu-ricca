@@ -3,17 +3,19 @@ package tictactoe;
 import tictactoe.states.GameState;
 import tictactoe.states.*;
 import java.util.List;
+import tictactoe.observers.GameObserver;
+import java.util.ArrayList;
 
 public class TicTacToe implements ITicTacToe {
     private final Board board;
 //    private Mark currentPlayer;
     private GameState currentState;
+    //observer stuff
+    private final List<GameObserver> observers = new ArrayList<>();
 
     //this class will be altered, the point of the game state pattern
     //is to remove a bunch of if statements, for example in the playMove method
     //i will comment out the original playMove for comparison in interview
-
-
     public TicTacToe(Board board) {
         this.board = board;
 //        this.currentPlayer = Mark.X;
@@ -91,6 +93,20 @@ public class TicTacToe implements ITicTacToe {
         }
         else if (currentState instanceof OTurnState){
             currentState = new XTurnState();
+        }
+    }
+
+    //stuff for observer pattern
+    public void addObserver(GameObserver observer){
+        observers.add(observer);
+    }
+
+    public void removeObserver(GameObserver observer){
+        observers.remove(observer);
+    }
+    public void notifyObservers(String message){
+        for(GameObserver observer : observers){
+            observer.update(this, message);
         }
     }
 
