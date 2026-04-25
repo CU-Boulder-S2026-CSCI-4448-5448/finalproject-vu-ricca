@@ -82,17 +82,22 @@ public class TicTacToe implements ITicTacToe {
 
         if(winner != Mark.EMPTY){
             currentState = new GameOverState(winner);
+            //notify observers
+            notifyObservers(winner + " wins!");
         }
         else if (board.boardIsFull()){
             currentState = new GameOverState(Mark.EMPTY);
+            notifyObservers("Draw");
         }
         //if the current state is X turns, change state to O's turn, this will be udated
         //after each state in Play Move
         else if (currentState instanceof XTurnState){
             currentState = new OTurnState();
+            notifyObservers("O's turn");
         }
         else if (currentState instanceof OTurnState){
             currentState = new XTurnState();
+            notifyObservers("X's turn");
         }
     }
 
