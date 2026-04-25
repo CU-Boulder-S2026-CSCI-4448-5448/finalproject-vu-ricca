@@ -3,7 +3,7 @@ Team Names: Sabrina Vu, Claire Ricca
 
 ## OOP Design Patterns
 ### 1. Strategy Pattern
-This is to determine how a move is chosen. A NPC or bot player could choose either random moves or stragized moves like open corners, 
+This is to determine how a move is chosen. A NPC or bot player could choose either random moves or strategized moves like open corners, 
 blocks, or first open squares on the grid
 ### 2. Observer Pattern
 This pattern is used to detect changes in the game or board, and determine how other objects need to react.
