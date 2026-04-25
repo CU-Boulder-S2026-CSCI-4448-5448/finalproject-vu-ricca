@@ -49,8 +49,7 @@ public class TicTacToe implements ITicTacToe {
 
     @Override
     public void reset() {
-
-//        may wanna implement a clear() method for here
+        board.clear();
         this.currentPlayer = Mark.X;
     }
 }
