@@ -1,7 +1,4 @@
-package main;
-
-import java.util.List;
-import java.util.Random;
+package tictactoe;
 
 public class Position {
     private final int row;

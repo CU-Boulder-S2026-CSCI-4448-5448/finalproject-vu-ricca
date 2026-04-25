@@ -1,4 +1,4 @@
-package main;
+package tictactoe;
 
 public enum Mark {X, O, EMPTY}
 

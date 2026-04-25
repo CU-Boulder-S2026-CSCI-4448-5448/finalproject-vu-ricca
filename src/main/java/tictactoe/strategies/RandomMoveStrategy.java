@@ -1,4 +1,6 @@
-package main;
+package tictactoe.strategies;
+
+import tictactoe.*;
 
 import java.util.List;
 import java.util.Random;
