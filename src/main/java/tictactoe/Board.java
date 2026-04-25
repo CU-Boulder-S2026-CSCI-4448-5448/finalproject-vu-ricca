@@ -106,4 +106,12 @@ public class Board {
         }
         return Mark.EMPTY;
     }
+//    clears the board for a clean reset of the game
+    public void clear() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                grid[i][j] = Mark.EMPTY;
+            }
+        }
+    }
 }
