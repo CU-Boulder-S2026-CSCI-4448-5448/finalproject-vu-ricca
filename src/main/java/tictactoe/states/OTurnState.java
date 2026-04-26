@@ -21,7 +21,7 @@ public class OTurnState implements GameState {
 
     @Override
     public Mark getCurrentPlayer() {
-        return Mark.X;
+        return Mark.O;
     }
 
     public boolean isGameOver() {
