@@ -1,4 +1,9 @@
-package tictactoe;
+package tictactoe.players;
+
+import tictactoe.Mark;
+import tictactoe.MoveStrategy;
+import tictactoe.Position;
+import tictactoe.Board;
 
 public class Player {
     private final Mark mark;
