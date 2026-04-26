@@ -30,3 +30,7 @@ bin/
 ###Gradle
 .gradle/
 build
+
+##idea
+.idea/
+*.iml
