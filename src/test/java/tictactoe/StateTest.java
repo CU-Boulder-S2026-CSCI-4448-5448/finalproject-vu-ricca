@@ -126,6 +126,6 @@ class StateTest {
         boolean result = state.playMove(game, position);
 
         assertTrue(result);
-        assertEquals(Mark.O, game.getBoard().getMark(position));
+        assertEquals(Mark.X, game.getBoard().getMark(position));
     }
 }
