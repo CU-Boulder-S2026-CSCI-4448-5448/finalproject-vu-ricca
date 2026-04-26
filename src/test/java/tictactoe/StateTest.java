@@ -119,7 +119,7 @@ class StateTest {
     @Test
     void playMovePlacesX(){
         TicTacToe game = new TicTacToe(new Board());
-        OTurnState state = new OTurnState();
+        XTurnState state = new XTurnState();
 
         Position position = new Position(1, 1);
 
