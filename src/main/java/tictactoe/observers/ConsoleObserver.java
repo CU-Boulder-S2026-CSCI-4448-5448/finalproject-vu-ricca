@@ -2,9 +2,12 @@ package tictactoe.observers;
 
 import tictactoe.Mark;
 import tictactoe.TicTacToe;
+
+import java.util.Observer;
+
 //should be accurate to each state, initial state is empty board
 //notify observer -> print updated console board
-public class ConsoleObserver {
+public class ConsoleObserver implements GameObserver {
 
     @Override
     public void update(TicTacToe game, String message){
